@@ -20,4 +20,4 @@ COPY . .
 EXPOSE 1234
 
 # start app
-CMD [ "pm2-runtime", "ecosystem.config.js" ]
+CMD [ "pm2-runtime", "ecosystem.config.cjs" ]
