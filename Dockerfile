@@ -1,14 +1,11 @@
 FROM node:20-alpine
 
-# RUN apk add --no-cache  chromium
+# Ireate destination directory
+RUN mkdir -p /usr/src/hocuspocus-server && chmod -R 777 /usr/src/hocuspocus-server
+WORKDIR /usr/src/hocuspocus-server
 
-# create destination directory
-RUN mkdir -p /usr/src/boilerplate && chmod -R 777 /usr/src/boilerplate
-WORKDIR /usr/src/hocuspocus-serer
+# Install app dependencies
 
-# install app dependencies
-# Copy package.json and pnpm-lock.yaml to the working directory
-# COPY package.json pnpm-lock.yaml yarn.lock ./
 COPY package.json package-lock.json ./
 
 # Install application dependencies
